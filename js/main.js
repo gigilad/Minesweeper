@@ -88,7 +88,6 @@ function cellClicked(elCell, cellIidx, cellJIdx) {
         startTimer(Date.now())
         isTimeON = true
       }
-    
     if (gBoard[cellIidx][cellJIdx].isMine){
         gBoard[cellIidx][cellJIdx].isMarked =true
         elCell.innerText = MINE
@@ -105,8 +104,8 @@ function cellClicked(elCell, cellIidx, cellJIdx) {
     showScore()
    var minesNegsCount = getMinesNegsCount(gBoard, cellIidx, cellJIdx)
    if (minesNegsCount===0) {
-    elCell.style.backgroundColor="#ffd3d3"
-    // expandShown(gBoard, elCell ,cellIidx, cellJIdx)
+    elCell.style.backgroundColor = "#ffd3d3"
+    expandShown(gBoard,cellIidx, cellJIdx)
    }
        
    
@@ -191,23 +190,29 @@ function resetGame() {
   }
 
 
-// function expandShown(board, elCell, idxI, idxJ) {
-//     var elCurrTile
-//     var MinesNegcount
-//     for (var i = idxI -1; i <idxI+1 ; i++) {
-//         if(i < 0 ||i >= board.length)continue
-//         for (var j = idxJ -1; j <= idxJ +1 ; j++) {
-//             board[idxI][idxJ].isShown = true;
-//             if (i === idxI && j === idxJ) continue;
-//             if( j < 0 || j >= board[0].length)continue  
-//           elCurrTile = document.querySelector(`.cell${i}-${j}`)
-//           MinesNegcount =getMinesNegsCount(board, i, j)
-//          elCurrTile.innerText =MinesNegcount
+function expandShown(board, idxI, idxJ) {
+    for (var i = idxI -1; i <idxI+1 ; i++) {
+        if(i < 0 ||i >= board.length)continue
+        for (var j = idxJ -1; j <= idxJ +1 ; j++) {
+            board[idxI][idxJ].isShown = true;
+            if (i === idxI && j === idxJ) continue;
+            if( j < 0 || j >= board[0].length)continue  
+            var pos ={ i, j}
+            if (!board[i][j].isMarked) {
+                board[i][j].isShown = true
+                renderCell(pos, board[i][j].minesAroundCount)
+              }
+          
         
          
 
-//         }
+        }
 
     
-// }
-// }
+}
+}
+function renderCell(pos, value) {
+    var elCell = document.querySelector(`.cell${pos.i}-${pos.j}`)
+    elCell.innerHTML = value
+  }
+  
