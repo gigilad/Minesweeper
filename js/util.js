@@ -1,18 +1,17 @@
 function printMat(mat, selector) {
-    var strHTML = '<table oncontextmenu="return false"><tbody>';
+    var strHTML = '<table ><tbody>';
     for (var i = 0; i < mat.length; i++) {
       strHTML += '<tr>';
       for (var j = 0; j < mat[0].length; j++) {
         var cell = mat[i][j];
         var className = `cell cell${i}-${j} `
-        strHTML += `<td class="${className}" onclick="cellClicked(this ,${i},${j},)"></td>`
+        strHTML += `<td class="${className}" onclick="cellClicked(this ,${i},${j},)" oncontextmenu="flagMark(this,${i},${j})"></td>`
       }
       strHTML += '</tr>'
     }
     strHTML += '</tbody></table>';
     var elContainer = document.querySelector(selector);
     elContainer.innerHTML = strHTML;
-    console.log(strHTML);
   }
 
   function getRandomInt(min, max) {

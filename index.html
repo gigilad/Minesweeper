@@ -8,11 +8,35 @@
     <title>Minesweeper</title>
 </head>
 <body onload="inIt()">
-<h2 class="title"> Minesweeper</h2>
-<div class="score">cells count:0</div>
+    <h1>Minesweeper</h1>
+    <div class="head">
+        <table>
+            <tr>
+                <td class="emoji" onclick="restartGame()">😃</td>
+                <td class="score">cells count: <span>0</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="lives">
+        <table>
+            <tr>
+                <td class="live1">💘</td>
+                <td class="live2">💘</td>
+                <td class="live3">💘</td>
+            </tr>
+        </table>
+    </div>
+
+
 <div class="board"></div>
-<div class="timer">00:00:00</div>
-<button class="btn" onclick="restartGame()" > Restart</button>
+<div class="gtimer">
+<h3 class="timer">00:00:00</h3>
+</div>
+<div class="levels">
+<button class="btn-level" onclick="setLevel(4,2)">Easy</button>
+<button class="btn-level" onclick="setLevel(8,12)">Medium</button>
+<button class="btn-level" onclick="setLevel(12,12)">Hard</button>
+</div>
 
 
 <script src="js/main.js"></script>
