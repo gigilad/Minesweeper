@@ -21,6 +21,7 @@ margin-top: 20px;
   font-size: 40px;
   padding: 30px;
   background-color:lightseagreen;
+  margin-left: 40%;
  }
   
   .board{
@@ -63,6 +64,7 @@ margin-top: 20px;
 
     }
   .lives td{
+    
     text-align: center; 
     border-radius: 15px; 
    height: 60px;
@@ -75,7 +77,7 @@ margin-top: 20px;
     .head{
       margin: auto;
       margin-top: 20px;
-      margin-left: 43%;
+      margin-left: 42%;
 
     }
     .head td{
@@ -93,13 +95,43 @@ margin-top: 20px;
   text-align: center;  
 }
     .btn-level{
+      
       color: white;
       margin-left: 15px;
        border-radius: 15px;    
-       width: 140px;
-        background-color:lightseagreen;
-        padding: 20px;
+       height: 60px;
+       width: 150px;
+       background-color:lightseagreen;
+        padding: 15px;
         font-size: 30px;
         margin-top: 10px;
+
     }
-    
+    .safety{
+      margin-top: 20px;
+      text-align: center;
+
+    }
+  .safe{
+    margin-left: 15px;
+    text-align: center;
+    border-radius: 15px; 
+   height: 60px;
+   font-size: 20px;
+   padding: 15px;
+   background-color:lightseagreen;
+   color: white;
+  }
+  .hints{
+    margin-top: 20px;
+    margin-left: 46%;
+  }
+  .hints td{
+    text-align: center; 
+    border-radius: 15px; 
+   height: 60px;
+   font-size: 20px;
+   padding: 15px;
+   background-color:lightseagreen;
+   border: 2px solid white;
+  }

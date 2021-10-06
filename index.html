@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Minesweeper</title>
 </head>
-<body onload="inIt()">
+<body id="noContextMenu" onload="inIt()">
     <h1>Minesweeper</h1>
     <div class="head">
         <table>
             <tr>
                 <td class="emoji" onclick="restartGame()">😃</td>
-                <td class="score">cells count: <span>0</span></td>
+                <td class="score">SCORE: <span>0</span></td>
             </tr>
         </table>
     </div>
@@ -23,6 +23,7 @@
                 <td class="live1">💘</td>
                 <td class="live2">💘</td>
                 <td class="live3">💘</td>
+    
             </tr>
         </table>
     </div>
@@ -30,7 +31,18 @@
 
 <div class="board"></div>
 <div class="gtimer">
-<h3 class="timer">00:00:00</h3>
+    <div class="hints">
+        <table>
+            <tr>
+                <td class="hint1" onclick="getHint(this)">💡</td>
+                <td class="hint2" onclick="getHint(this)">💡</td>
+                <td class="hint3" onclick="getHint(this)">💡</td>
+            </tr>
+        </table>
+    </div>
+    <h3 class="timer">00:00:00</h3>
+<div class="safety">
+                <button onclick="safeClick(this)" class="safe">SAFE CLICK</button>
 </div>
 <div class="levels">
 <button class="btn-level" onclick="setLevel(4,2)">Easy</button>
